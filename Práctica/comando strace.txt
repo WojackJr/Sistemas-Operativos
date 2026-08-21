@@ -1,0 +1,478 @@
+[brianv@brian-sf20gm7 ~]$ strace ls -la
+execve("/usr/bin/ls", ["ls", "-la"], 0x7fff8742d048 /* 59 vars */) = 0
+newfstatat(AT_FDCWD, "/etc/ld.so.cache", {st_mode=S_IFREG|0644, st_size=167747, ...}, 0) = 0
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=167747, ...}) = 0
+mmap(NULL, 167747, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f4cbc764000
+close(3)                                = 0
+brk(NULL)                               = 0x55e973969000
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f4cbc762000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No existe el fichero o el directorio)
+newfstatat(AT_FDCWD, "/etc/ld.so.cache", {st_mode=S_IFREG|0644, st_size=167747, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/libcap.so.2", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\320{\0\0\0\0\0\0"..., 1024) = 1024
+fstat(3, {st_mode=S_IFREG|0755, st_size=43064, ...}) = 0
+mmap(NULL, 45128, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f4cbc756000
+mmap(0x7f4cbc759000, 20480, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x7f4cbc759000
+mmap(0x7f4cbc75e000, 8192, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x8000) = 0x7f4cbc75e000
+mmap(0x7f4cbc760000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x9000) = 0x7f4cbc760000
+close(3)                                = 0
+newfstatat(AT_FDCWD, "/etc/ld.so.cache", {st_mode=S_IFREG|0644, st_size=167747, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\300y\2\0\0\0\0\0"..., 1024) = 1024
+fstat(3, {st_mode=S_IFREG|0755, st_size=2202784, ...}) = 0
+mmap(NULL, 2227024, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f4cbc400000
+mmap(0x7f4cbc424000, 1540096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x24000) = 0x7f4cbc424000
+mmap(0x7f4cbc59c000, 483328, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x19c000) = 0x7f4cbc59c000
+mmap(0x7f4cbc612000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x211000) = 0x7f4cbc612000
+mmap(0x7f4cbc618000, 31568, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f4cbc618000
+close(3)                                = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f4cbc753000
+arch_prctl(ARCH_SET_FS, 0x7f4cbc753740) = 0
+set_tid_address(0x7f4cbc753d68)         = 6169
+set_robust_list(0x7f4cbc753a20, 24)     = 0
+rseq({cpu_id_start=0, cpu_id=RSEQ_CPU_ID_UNINITIALIZED, rseq_cs=NULL, flags=0, node_id=0, mm_cid=0, slice_ctrl={request=0, granted=0, __reserved=0}, __reserved=0}, 32, 0, 0x53053053) = 0
+getrandom("\x6e\x5f\x0c\xcd\x25\x42\x2b\xba\x02\xae\xae\xd6\x50\x9d\x48\x3d", 16, GRND_NONBLOCK) = 16
+mprotect(0x7f4cbc612000, 16384, PROT_READ) = 0
+mprotect(0x7f4cbc760000, 4096, PROT_READ) = 0
+mprotect(0x55e939317000, 8192, PROT_READ) = 0
+mprotect(0x7f4cbc7d2000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+getrandom("\x96\x20\xe9\x2b\x3f\x99\x81\xeb", 8, GRND_NONBLOCK) = 8
+prctl(PR_CAPBSET_READ, CAP_MAC_OVERRIDE) = 1
+prctl(PR_CAPBSET_READ, 0x30 /* CAP_??? */) = -1 EINVAL (Argumento inválido)
+prctl(PR_CAPBSET_READ, CAP_CHECKPOINT_RESTORE) = 1
+prctl(PR_CAPBSET_READ, 0x2c /* CAP_??? */) = -1 EINVAL (Argumento inválido)
+prctl(PR_CAPBSET_READ, 0x2a /* CAP_??? */) = -1 EINVAL (Argumento inválido)
+prctl(PR_CAPBSET_READ, 0x29 /* CAP_??? */) = -1 EINVAL (Argumento inválido)
+brk(NULL)                               = 0x55e973969000
+brk(0x55e97398a000)                     = 0x55e97398a000
+openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=5655728, ...}) = 0
+mmap(NULL, 5655728, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f4cbbe00000
+close(3)                                = 0
+ioctl(1, TCGETS2, {c_iflag=ICRNL|IXON|IUTF8, c_oflag=NL0|CR0|TAB0|BS0|VT0|FF0|OPOST|ONLCR, c_cflag=B38400|CS8|CREAD, c_lflag=ISIG|ICANON|ECHO|ECHOE|ECHOK|IEXTEN|ECHOCTL|ECHOKE, ...}) = 0
+openat(AT_FDCWD, "/usr/share/locale/locale.alias", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=2998, ...}) = 0
+read(3, "# Locale name alias data base.\n#"..., 4096) = 2998
+read(3, "", 4096)                       = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/locale/es_AR.UTF-8/LC_TIME/coreutils.mo", O_RDONLY) = -1 ENOENT (No existe el fichero o el directorio)
+openat(AT_FDCWD, "/usr/share/locale/es_AR.utf8/LC_TIME/coreutils.mo", O_RDONLY) = -1 ENOENT (No existe el fichero o el directorio)
+openat(AT_FDCWD, "/usr/share/locale/es_AR/LC_TIME/coreutils.mo", O_RDONLY) = -1 ENOENT (No existe el fichero o el directorio)
+openat(AT_FDCWD, "/usr/share/locale/es.UTF-8/LC_TIME/coreutils.mo", O_RDONLY) = -1 ENOENT (No existe el fichero o el directorio)
+openat(AT_FDCWD, "/usr/share/locale/es.utf8/LC_TIME/coreutils.mo", O_RDONLY) = -1 ENOENT (No existe el fichero o el directorio)
+openat(AT_FDCWD, "/usr/share/locale/es/LC_TIME/coreutils.mo", O_RDONLY) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=190586, ...}) = 0
+mmap(NULL, 190586, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f4cbc724000
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/lib/gconv/gconv-modules.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=27010, ...}) = 0
+mmap(NULL, 27010, PROT_READ, MAP_SHARED, 3, 0) = 0x7f4cbc71d000
+close(3)                                = 0
+futex(0x7f4cbc6176ec, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+openat(AT_FDCWD, ".", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+fstat(3, {st_mode=S_IFDIR|0700, st_size=870, ...}) = 0
+getdents64(3, 0x55e9739727d0 /* 50 entries */, 32768) = 1616
+statx(AT_FDCWD, ".", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFDIR|0700, stx_size=870, ...}) = 0
+llistxattr(".", "", 152)                = 0
+newfstatat(AT_FDCWD, "/etc/nsswitch.conf", {st_mode=S_IFREG|0644, st_size=390, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/", {st_mode=S_IFDIR|0555, st_size=216, ...}, 0) = 0
+openat(AT_FDCWD, "/etc/nsswitch.conf", O_RDONLY|O_CLOEXEC) = 4
+fstat(4, {st_mode=S_IFREG|0644, st_size=390, ...}) = 0
+read(4, "# Name Service Switch configurat"..., 4096) = 390
+read(4, "", 4096)                       = 0
+fstat(4, {st_mode=S_IFREG|0644, st_size=390, ...}) = 0
+close(4)                                = 0
+openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 4
+fstat(4, {st_mode=S_IFREG|0644, st_size=2457, ...}) = 0
+lseek(4, 0, SEEK_SET)                   = 0
+read(4, "root:x:0:0::/root:/usr/bin/bash\n"..., 4096) = 2457
+lseek(4, 2092, SEEK_SET)                = 2092
+close(4)                                = 0
+newfstatat(AT_FDCWD, "/etc/nsswitch.conf", {st_mode=S_IFREG|0644, st_size=390, ...}, 0) = 0
+openat(AT_FDCWD, "/etc/group", O_RDONLY|O_CLOEXEC) = 4
+fstat(4, {st_mode=S_IFREG|0644, st_size=1141, ...}) = 0
+lseek(4, 0, SEEK_SET)                   = 0
+read(4, "root:x:0:root\nnobody:x:65534:\nad"..., 4096) = 1141
+lseek(4, 1039, SEEK_SET)                = 1039
+close(4)                                = 0
+newfstatat(AT_FDCWD, "/etc/ld.so.cache", {st_mode=S_IFREG|0644, st_size=167747, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/libnss_systemd.so.2", O_RDONLY|O_CLOEXEC) = 4
+read(4, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 1024) = 1024
+fstat(4, {st_mode=S_IFREG|0755, st_size=519096, ...}) = 0
+mmap(NULL, 519392, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7f4cbc69e000
+mmap(0x7f4cbc6a2000, 360448, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x4000) = 0x7f4cbc6a2000
+mmap(0x7f4cbc6fa000, 114688, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x5c000) = 0x7f4cbc6fa000
+mmap(0x7f4cbc716000, 28672, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x78000) = 0x7f4cbc716000
+close(4)                                = 0
+newfstatat(AT_FDCWD, "/etc/ld.so.cache", {st_mode=S_IFREG|0644, st_size=167747, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 4
+read(4, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 1024) = 1024
+fstat(4, {st_mode=S_IFREG|0644, st_size=182512, ...}) = 0
+mmap(NULL, 180712, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7f4cbc671000
+mmap(0x7f4cbc675000, 143360, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x4000) = 0x7f4cbc675000
+mmap(0x7f4cbc698000, 16384, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x27000) = 0x7f4cbc698000
+mmap(0x7f4cbc69c000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x2b000) = 0x7f4cbc69c000
+close(4)                                = 0
+mprotect(0x7f4cbc69c000, 4096, PROT_READ) = 0
+mprotect(0x7f4cbc716000, 24576, PROT_READ) = 0
+futex(0x7f4cbc71cc58, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+rt_sigprocmask(SIG_BLOCK, [HUP USR1 USR2 PIPE ALRM CHLD TSTP URG VTALRM PROF WINCH IO], [], 8) = 0
+futex(0x7f4cbc71cb40, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+openat(AT_FDCWD, "/run/systemd/userdb/", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 4
+fstat(4, {st_mode=S_IFDIR|0755, st_size=120, ...}) = 0
+getdents64(4, 0x55e97397ddf0 /* 6 entries */, 32768) = 232
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 5
+connect(5, {sa_family=AF_UNIX, sun_path="/run/systemd/userdb/io.systemd.DropIn"}, 40) = 0
+fstat(5, {st_mode=S_IFSOCK|0777, st_size=0, ...}) = 0
+rt_sigprocmask(SIG_BLOCK, ~[], [HUP USR1 USR2 PIPE ALRM CHLD TSTP URG VTALRM PROF WINCH IO], 8) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_DROPPABLE|MAP_ANONYMOUS, -1, 0) = 0x7f4cbc670000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f4cbc66f000
+rt_sigprocmask(SIG_SETMASK, [HUP USR1 USR2 PIPE ALRM CHLD TSTP URG VTALRM PROF WINCH IO], NULL, 8) = 0
+getrandom("\xe7\xde\x70\x44\x87\xae\xd1\x19\x50\x1d\x16\x74\xcc\x3a\x5f\x30\x90\xa2\x70\x7d\xcc\x9d\x1a\x75\x63\x15\x07\x4f\x5f\x02\x26\x90", 32, 0) = 32
+futex(0x7f4cbc71ccc0, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+getpid()                                = 6169
+epoll_create1(EPOLL_CLOEXEC)            = 6
+epoll_ctl(6, EPOLL_CTL_ADD, 5, {events=0, data=0x55e973986290}) = 0
+timerfd_create(CLOCK_MONOTONIC, TFD_CLOEXEC|TFD_NONBLOCK) = 7
+epoll_ctl(6, EPOLL_CTL_ADD, 7, {events=EPOLLIN, data=0x55e973986030}) = 0
+futex(0x7f4cbc71cc94, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 8
+connect(8, {sa_family=AF_UNIX, sun_path="/run/systemd/userdb/io.systemd.DynamicUser"}, 45) = 0
+fstat(8, {st_mode=S_IFSOCK|0777, st_size=0, ...}) = 0
+epoll_ctl(6, EPOLL_CTL_ADD, 8, {events=0, data=0x55e973987720}) = 0
+getdents64(4, 0x55e97397ddf0 /* 0 entries */, 32768) = 0
+close(4)                                = 0
+epoll_ctl(6, EPOLL_CTL_MOD, 5, {events=EPOLLIN|EPOLLOUT, data=0x55e973986290}) = 0
+epoll_ctl(6, EPOLL_CTL_MOD, 8, {events=EPOLLIN|EPOLLOUT, data=0x55e973987720}) = 0
+openat(AT_FDCWD, "/proc/sys/kernel/random/boot_id", O_RDONLY|O_NOCTTY|O_CLOEXEC) = 4
+read(4, "fa7fcb5a-ff0b-4c20-97be-bcff4c65"..., 38) = 37
+read(4, "", 1)                          = 0
+close(4)                                = 0
+timerfd_settime(7, TFD_TIMER_ABSTIME, {it_interval={tv_sec=0, tv_nsec=0}, it_value={tv_sec=4948, tv_nsec=861645000}}, NULL) = 0
+epoll_wait(6, [{events=EPOLLOUT, data=0x55e973986290}, {events=EPOLLOUT, data=0x55e973987720}], 16, 0) = 2
+sendto(5, "{\"method\":\"io.systemd.UserDataba"..., 108, MSG_DONTWAIT|MSG_NOSIGNAL, NULL, 0) = 108
+epoll_ctl(6, EPOLL_CTL_MOD, 5, {events=EPOLLIN, data=0x55e973986290}) = 0
+epoll_wait(6, [{events=EPOLLOUT, data=0x55e973987720}], 16, 0) = 1
+sendto(8, "{\"method\":\"io.systemd.UserDataba"..., 113, MSG_DONTWAIT|MSG_NOSIGNAL, NULL, 0) = 113
+epoll_ctl(6, EPOLL_CTL_MOD, 8, {events=EPOLLIN, data=0x55e973987720}) = 0
+epoll_wait(6, [], 16, 0)                = 0
+mmap(NULL, 135168, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f4cbc64e000
+recvfrom(5, "{\"error\":\"io.systemd.UserDatabas"..., 135144, MSG_DONTWAIT, NULL, NULL) = 50
+epoll_ctl(6, EPOLL_CTL_MOD, 5, {events=0, data=0x55e973986290}) = 0
+epoll_wait(6, [], 16, 0)                = 0
+mmap(NULL, 135168, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f4cbc62d000
+recvfrom(8, 0x7f4cbc62d010, 135144, MSG_DONTWAIT, NULL, NULL) = -1 EAGAIN (Recurso no disponible temporalmente)
+epoll_wait(6, [], 16, 0)                = 0
+epoll_wait(6, [], 16, 0)                = 0
+epoll_ctl(6, EPOLL_CTL_DEL, 5, NULL)    = 0
+close(5)                                = 0
+munmap(0x7f4cbc64e000, 135168)          = 0
+epoll_wait(6, [{events=EPOLLIN, data=0x55e973987720}], 16, -1) = 1
+recvfrom(8, "{\"error\":\"io.systemd.UserDatabas"..., 135144, MSG_DONTWAIT, NULL, NULL) = 50
+epoll_ctl(6, EPOLL_CTL_MOD, 8, {events=0, data=0x55e973987720}) = 0
+epoll_wait(6, [], 16, 0)                = 0
+timerfd_settime(7, TFD_TIMER_ABSTIME, {it_interval={tv_sec=0, tv_nsec=0}, it_value={tv_sec=0, tv_nsec=0}}, NULL) = 0
+epoll_wait(6, [], 16, 0)                = 0
+epoll_ctl(6, EPOLL_CTL_DEL, 8, NULL)    = 0
+close(8)                                = 0
+munmap(0x7f4cbc62d000, 135168)          = 0
+close(6)                                = 0
+close(7)                                = 0
+newfstatat(AT_FDCWD, "/etc/nsswitch.conf", {st_mode=S_IFREG|0644, st_size=390, ...}, 0) = 0
+openat(AT_FDCWD, "/etc/group", O_RDONLY|O_CLOEXEC) = 4
+fstat(4, {st_mode=S_IFREG|0644, st_size=1141, ...}) = 0
+lseek(4, 0, SEEK_SET)                   = 0
+read(4, "root:x:0:root\nnobody:x:65534:\nad"..., 4096) = 1141
+lseek(4, 1039, SEEK_SET)                = 1039
+close(4)                                = 0
+rt_sigprocmask(SIG_BLOCK, [HUP USR1 USR2 PIPE ALRM CHLD TSTP URG VTALRM PROF WINCH IO], [HUP USR1 USR2 PIPE ALRM CHLD TSTP URG VTALRM PROF WINCH IO], 8) = 0
+rt_sigprocmask(SIG_SETMASK, [HUP USR1 USR2 PIPE ALRM CHLD TSTP URG VTALRM PROF WINCH IO], NULL, 8) = 0
+openat(AT_FDCWD, "/run/systemd/userdb/", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 4
+fstat(4, {st_mode=S_IFDIR|0755, st_size=120, ...}) = 0
+brk(0x55e9739b0000)                     = 0x55e9739b0000
+getdents64(4, 0x55e973987b80 /* 6 entries */, 32768) = 232
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 5
+connect(5, {sa_family=AF_UNIX, sun_path="/run/systemd/userdb/io.systemd.DropIn"}, 40) = 0
+fstat(5, {st_mode=S_IFSOCK|0777, st_size=0, ...}) = 0
+epoll_create1(EPOLL_CLOEXEC)            = 6
+epoll_ctl(6, EPOLL_CTL_ADD, 5, {events=0, data=0x55e9739877d0}) = 0
+timerfd_create(CLOCK_MONOTONIC, TFD_CLOEXEC|TFD_NONBLOCK) = 7
+epoll_ctl(6, EPOLL_CTL_ADD, 7, {events=EPOLLIN, data=0x55e973986030}) = 0
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 8
+connect(8, {sa_family=AF_UNIX, sun_path="/run/systemd/userdb/io.systemd.DynamicUser"}, 45) = 0
+fstat(8, {st_mode=S_IFSOCK|0777, st_size=0, ...}) = 0
+epoll_ctl(6, EPOLL_CTL_ADD, 8, {events=0, data=0x55e973986550}) = 0
+getdents64(4, 0x55e973987b80 /* 0 entries */, 32768) = 0
+close(4)                                = 0
+epoll_ctl(6, EPOLL_CTL_MOD, 5, {events=EPOLLIN|EPOLLOUT, data=0x55e9739877d0}) = 0
+epoll_ctl(6, EPOLL_CTL_MOD, 8, {events=EPOLLIN|EPOLLOUT, data=0x55e973986550}) = 0
+timerfd_settime(7, TFD_TIMER_ABSTIME, {it_interval={tv_sec=0, tv_nsec=0}, it_value={tv_sec=4948, tv_nsec=861645000}}, NULL) = 0
+epoll_wait(6, [{events=EPOLLOUT, data=0x55e9739877d0}, {events=EPOLLOUT, data=0x55e973986550}], 16, 0) = 2
+sendto(5, "{\"method\":\"io.systemd.UserDataba"..., 130, MSG_DONTWAIT|MSG_NOSIGNAL, NULL, 0) = 130
+epoll_ctl(6, EPOLL_CTL_MOD, 5, {events=EPOLLIN, data=0x55e9739877d0}) = 0
+epoll_wait(6, [{events=EPOLLOUT, data=0x55e973986550}], 16, 0) = 1
+sendto(8, "{\"method\":\"io.systemd.UserDataba"..., 135, MSG_DONTWAIT|MSG_NOSIGNAL, NULL, 0) = 135
+epoll_ctl(6, EPOLL_CTL_MOD, 8, {events=EPOLLIN, data=0x55e973986550}) = 0
+epoll_wait(6, [], 16, 0)                = 0
+recvfrom(5, 0x55e973987b50, 131080, MSG_DONTWAIT, NULL, NULL) = -1 EAGAIN (Recurso no disponible temporalmente)
+epoll_wait(6, [{events=EPOLLIN, data=0x55e973986550}], 16, 0) = 1
+brk(0x55e9739e8000)                     = 0x55e9739e8000
+recvfrom(8, "{\"error\":\"io.systemd.UserDatabas"..., 131080, MSG_DONTWAIT, NULL, NULL) = 50
+epoll_ctl(6, EPOLL_CTL_MOD, 8, {events=0, data=0x55e973986550}) = 0
+epoll_wait(6, [], 16, 0)                = 0
+epoll_wait(6, [], 16, 0)                = 0
+epoll_ctl(6, EPOLL_CTL_DEL, 8, NULL)    = 0
+close(8)                                = 0
+epoll_wait(6, [{events=EPOLLIN, data=0x55e9739877d0}], 16, -1) = 1
+recvfrom(5, "{\"error\":\"io.systemd.UserDatabas"..., 131080, MSG_DONTWAIT, NULL, NULL) = 50
+epoll_ctl(6, EPOLL_CTL_MOD, 5, {events=0, data=0x55e9739877d0}) = 0
+epoll_wait(6, [], 16, 0)                = 0
+timerfd_settime(7, TFD_TIMER_ABSTIME, {it_interval={tv_sec=0, tv_nsec=0}, it_value={tv_sec=0, tv_nsec=0}}, NULL) = 0
+epoll_wait(6, [], 16, 0)                = 0
+epoll_ctl(6, EPOLL_CTL_DEL, 5, NULL)    = 0
+close(5)                                = 0
+brk(0x55e9739a8000)                     = 0x55e9739a8000
+close(6)                                = 0
+close(7)                                = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+statx(AT_FDCWD, "..", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=STATX_ATTR_MOUNT_ROOT, stx_mode=S_IFDIR|0755, stx_size=12, ...}) = 0
+llistxattr("..", "", 152)               = 0
+newfstatat(AT_FDCWD, "/etc/nsswitch.conf", {st_mode=S_IFREG|0644, st_size=390, ...}, 0) = 0
+openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 4
+fstat(4, {st_mode=S_IFREG|0644, st_size=2457, ...}) = 0
+lseek(4, 0, SEEK_SET)                   = 0
+read(4, "root:x:0:0::/root:/usr/bin/bash\n"..., 4096) = 2457
+lseek(4, 32, SEEK_SET)                  = 32
+close(4)                                = 0
+newfstatat(AT_FDCWD, "/etc/nsswitch.conf", {st_mode=S_IFREG|0644, st_size=390, ...}, 0) = 0
+openat(AT_FDCWD, "/etc/group", O_RDONLY|O_CLOEXEC) = 4
+fstat(4, {st_mode=S_IFREG|0644, st_size=1141, ...}) = 0
+lseek(4, 0, SEEK_SET)                   = 0
+read(4, "root:x:0:root\nnobody:x:65534:\nad"..., 4096) = 1141
+lseek(4, 14, SEEK_SET)                  = 14
+close(4)                                = 0
+rt_sigprocmask(SIG_BLOCK, [HUP USR1 USR2 PIPE ALRM CHLD TSTP URG VTALRM PROF WINCH IO], [], 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+statx(AT_FDCWD, ".bash_logout", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=21, ...}) = 0
+llistxattr(".bash_logout", "", 152)     = 0
+statx(AT_FDCWD, ".bash_profile", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=57, ...}) = 0
+llistxattr(".bash_profile", "", 152)    = 0
+statx(AT_FDCWD, ".bashrc", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=3508, ...}) = 0
+llistxattr(".bashrc", "", 152)          = 0
+statx(AT_FDCWD, ".zshrc", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=416, ...}) = 0
+llistxattr(".zshrc", "", 152)           = 0
+statx(AT_FDCWD, ".config", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=784, ...}) = 0
+llistxattr(".config", "", 152)          = 0
+statx(AT_FDCWD, ".Xclients", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFREG|0755, stx_size=100, ...}) = 0
+llistxattr(".Xclients", "", 152)        = 0
+statx(AT_FDCWD, ".dir_colors", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=4855, ...}) = 0
+llistxattr(".dir_colors", "", 152)      = 0
+statx(AT_FDCWD, ".profile", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=141, ...}) = 0
+llistxattr(".profile", "", 152)         = 0
+statx(AT_FDCWD, ".xinitrc", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=1508, ...}) = 0
+llistxattr(".xinitrc", "", 152)         = 0
+statx(AT_FDCWD, ".dmrc", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=43, ...}) = 0
+llistxattr(".dmrc", "", 152)            = 0
+statx(AT_FDCWD, ".local", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFDIR|0700, stx_size=20, ...}) = 0
+llistxattr(".local", "", 152)           = 0
+statx(AT_FDCWD, ".Xauthority", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFREG|0600, stx_size=58, ...}) = 0
+llistxattr(".Xauthority", "", 152)      = 0
+statx(AT_FDCWD, ".cache", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=996, ...}) = 0
+llistxattr(".cache", "", 152)           = 0
+statx(AT_FDCWD, "Escritorio", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=0, ...}) = 0
+llistxattr("Escritorio", "", 152)       = 0
+statx(AT_FDCWD, "Descargas", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=1040, ...}) = 0
+llistxattr("Descargas", "", 152)        = 0
+statx(AT_FDCWD, "Plantillas", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=0, ...}) = 0
+llistxattr("Plantillas", "", 152)       = 0
+statx(AT_FDCWD, "P\303\272blico", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=0, ...}) = 0
+llistxattr("P\303\272blico", "", 152)   = 0
+statx(AT_FDCWD, "Documentos", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=376, ...}) = 0
+llistxattr("Documentos", "", 152)       = 0
+statx(AT_FDCWD, "M\303\272sica", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=0, ...}) = 0
+llistxattr("M\303\272sica", "", 152)    = 0
+statx(AT_FDCWD, "Im\303\241genes", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=86, ...}) = 0
+llistxattr("Im\303\241genes", "", 152)  = 0
+statx(AT_FDCWD, "V\303\255deos", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=0, ...}) = 0
+llistxattr("V\303\255deos", "", 152)    = 0
+statx(AT_FDCWD, ".ICEauthority", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFREG|0600, stx_size=0, ...}) = 0
+llistxattr(".ICEauthority", "", 152)    = 0
+statx(AT_FDCWD, ".ssh", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFDIR|0700, stx_size=10, ...}) = 0
+llistxattr(".ssh", "", 152)             = 0
+statx(AT_FDCWD, ".gnupg", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFDIR|0700, stx_size=34, ...}) = 0
+llistxattr(".gnupg", "", 152)           = 0
+statx(AT_FDCWD, "Proyectos", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=0, ...}) = 0
+llistxattr("Proyectos", "", 152)        = 0
+statx(AT_FDCWD, ".zhistory", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFREG|0600, stx_size=1165, ...}) = 0
+llistxattr(".zhistory", "", 152)        = 0
+statx(AT_FDCWD, ".zcompdump", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=53937, ...}) = 0
+llistxattr(".zcompdump", "", 152)       = 0
+statx(AT_FDCWD, ".var", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=6, ...}) = 0
+llistxattr(".var", "", 152)             = 0
+statx(AT_FDCWD, ".pki", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFDIR|0700, stx_size=10, ...}) = 0
+llistxattr(".pki", "", 152)             = 0
+statx(AT_FDCWD, ".gitconfig", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=203, ...}) = 0
+llistxattr(".gitconfig", "", 152)       = 0
+statx(AT_FDCWD, ".bash_history", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFREG|0600, stx_size=1668, ...}) = 0
+llistxattr(".bash_history", "", 152)    = 0
+statx(AT_FDCWD, ".viminfo", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFREG|0600, stx_size=743, ...}) = 0
+llistxattr(".viminfo", "", 152)         = 0
+statx(AT_FDCWD, ".npm", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=112, ...}) = 0
+llistxattr(".npm", "", 152)             = 0
+statx(AT_FDCWD, ".java", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=30, ...}) = 0
+llistxattr(".java", "", 152)            = 0
+statx(AT_FDCWD, ".jdks", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=124, ...}) = 0
+llistxattr(".jdks", "", 152)            = 0
+statx(AT_FDCWD, ".rustup", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=96, ...}) = 0
+llistxattr(".rustup", "", 152)          = 0
+statx(AT_FDCWD, ".cargo", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=112, ...}) = 0
+llistxattr(".cargo", "", 152)           = 0
+statx(AT_FDCWD, "campusutn.deb", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=4509300, ...}) = 0
+llistxattr("campusutn.deb", "", 152)    = 0
+statx(AT_FDCWD, "campusutn.AppImage", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFREG|0755, stx_size=102316536, ...}) = 0
+llistxattr("campusutn.AppImage", "", 152) = 0
+statx(AT_FDCWD, "campusutn.zip", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=101690761, ...}) = 0
+llistxattr("campusutn.zip", "", 152)    = 0
+statx(AT_FDCWD, ".bubblewrap", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=50, ...}) = 0
+llistxattr(".bubblewrap", "", 152)      = 0
+statx(AT_FDCWD, ".android", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=46, ...}) = 0
+llistxattr(".android", "", 152)         = 0
+statx(AT_FDCWD, ".gradle", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=98, ...}) = 0
+llistxattr(".gradle", "", 152)          = 0
+statx(AT_FDCWD, "thunderbird", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFDIR|0700, stx_size=0, ...}) = 0
+llistxattr("thunderbird", "", 152)      = 0
+statx(AT_FDCWD, ".thunderbird", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFDIR|0700, stx_size=128, ...}) = 0
+llistxattr(".thunderbird", "", 152)     = 0
+statx(AT_FDCWD, "output.txt", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=38081, ...}) = 0
+llistxattr("output.txt", "", 152)       = 0
+statx(AT_FDCWD, ".xsession-errors.old", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFREG|0600, stx_size=13048, ...}) = 0
+llistxattr(".xsession-errors.old", "", 152) = 0
+statx(AT_FDCWD, ".xsession-errors", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_attributes=0, stx_mode=S_IFREG|0600, stx_size=11435, ...}) = 0
+llistxattr(".xsession-errors", "", 152) = 0
+getdents64(3, 0x55e9739727d0 /* 0 entries */, 32768) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/locale/es_AR.utf8/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No existe el fichero o el directorio)
+openat(AT_FDCWD, "/usr/share/locale/es_AR/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No existe el fichero o el directorio)
+openat(AT_FDCWD, "/usr/share/locale/es.utf8/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No existe el fichero o el directorio)
+openat(AT_FDCWD, "/usr/share/locale/es/LC_MESSAGES/coreutils.mo", O_RDONLY) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=190586, ...}) = 0
+mmap(NULL, 190586, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f4cbc640000
+close(3)                                = 0
+fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}) = 0
+write(1, "total 203816\n", 13total 203816
+)          = 13
+openat(AT_FDCWD, "/etc/localtime", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=1062, ...}) = 0
+fstat(3, {st_mode=S_IFREG|0644, st_size=1062, ...}) = 0
+read(3, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 4096) = 1062
+lseek(3, -657, SEEK_CUR)                = 405
+read(3, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 4096) = 657
+lseek(3, 1061, SEEK_SET)                = 1061
+close(3)                                = 0
+write(1, "drwx------ 1 brianv brianv      "..., 52drwx------ 1 brianv brianv       870 ago 21 08:17 .
+) = 52
+write(1, "drwxr-xr-x 1 root   root        "..., 53drwxr-xr-x 1 root   root          12 jul 24 21:51 ..
+) = 53
+write(1, "drwxr-xr-x 1 brianv brianv      "..., 59drwxr-xr-x 1 brianv brianv        46 ago 14 19:00 .android
+) = 59
+write(1, "-rw------- 1 brianv brianv      "..., 64-rw------- 1 brianv brianv      1668 ago 21 09:38 .bash_history
+) = 64
+write(1, "-rw-r--r-- 1 brianv brianv      "..., 63-rw-r--r-- 1 brianv brianv        21 dic 14  2025 .bash_logout
+) = 63
+write(1, "-rw-r--r-- 1 brianv brianv      "..., 64-rw-r--r-- 1 brianv brianv        57 dic 14  2025 .bash_profile
+) = 64
+write(1, "-rw-r--r-- 1 brianv brianv      "..., 58-rw-r--r-- 1 brianv brianv      3508 ago  6 12:30 .bashrc
+) = 58
+write(1, "drwxr-xr-x 1 brianv brianv      "..., 62drwxr-xr-x 1 brianv brianv        50 ago 14 18:44 .bubblewrap
+) = 62
+write(1, "drwxr-xr-x 1 brianv brianv      "..., 57drwxr-xr-x 1 brianv brianv       996 ago 20 09:31 .cache
+) = 57
+write(1, "-rwxr-xr-x 1 brianv brianv 10231"..., 69-rwxr-xr-x 1 brianv brianv 102316536 ago 14 17:09 campusutn.AppImage
+) = 69
+write(1, "-rw-r--r-- 1 brianv brianv   450"..., 64-rw-r--r-- 1 brianv brianv   4509300 ago 14 17:05 campusutn.deb
+) = 64
+write(1, "-rw-r--r-- 1 brianv brianv 10169"..., 64-rw-r--r-- 1 brianv brianv 101690761 ago 14 17:31 campusutn.zip
+) = 64
+write(1, "drwxr-xr-x 1 brianv brianv      "..., 57drwxr-xr-x 1 brianv brianv       112 ago 14 17:05 .cargo
+) = 57
+write(1, "drwxr-xr-x 1 brianv brianv      "..., 58drwxr-xr-x 1 brianv brianv       784 ago 20 09:31 .config
+) = 58
+write(1, "drwxr-xr-x 1 brianv brianv      "..., 60drwxr-xr-x 1 brianv brianv      1040 ago 17 11:06 Descargas
+) = 60
+write(1, "-rw-r--r-- 1 brianv brianv      "..., 62-rw-r--r-- 1 brianv brianv      4855 jun 29  2024 .dir_colors
+) = 62
+write(1, "-rw-r--r-- 1 brianv brianv      "..., 56-rw-r--r-- 1 brianv brianv        43 jul 24 21:56 .dmrc
+) = 56
+write(1, "drwxr-xr-x 1 brianv brianv      "..., 61drwxr-xr-x 1 brianv brianv       376 ago 20 20:54 Documentos
+) = 61
+write(1, "drwxr-xr-x 1 brianv brianv      "..., 61drwxr-xr-x 1 brianv brianv         0 jul 24 21:56 Escritorio
+) = 61
+write(1, "-rw-r--r-- 1 brianv brianv      "..., 61-rw-r--r-- 1 brianv brianv       203 ago  1 13:24 .gitconfig
+) = 61
+write(1, "drwx------ 1 brianv brianv      "..., 57drwx------ 1 brianv brianv        34 jul 24 21:56 .gnupg
+) = 57
+write(1, "drwxr-xr-x 1 brianv brianv      "..., 58drwxr-xr-x 1 brianv brianv        98 ago 14 19:00 .gradle
+) = 58
+write(1, "-rw------- 1 brianv brianv      "..., 64-rw------- 1 brianv brianv         0 jul 24 21:56 .ICEauthority
+) = 64
+write(1, "drwxr-xr-x 1 brianv brianv      "..., 60drwxr-xr-x 1 brianv brianv        86 jul 26 18:11 Imágenes
+) = 60
+write(1, "drwxr-xr-x 1 brianv brianv      "..., 56drwxr-xr-x 1 brianv brianv        30 ago 10 11:35 .java
+) = 56
+write(1, "drwxr-xr-x 1 brianv brianv      "..., 56drwxr-xr-x 1 brianv brianv       124 ago 10 13:25 .jdks
+) = 56
+write(1, "drwx------ 1 brianv brianv      "..., 57drwx------ 1 brianv brianv        20 jul 24 21:56 .local
+) = 57
+write(1, "drwxr-xr-x 1 brianv brianv      "..., 58drwxr-xr-x 1 brianv brianv         0 jul 24 21:56 Música
+) = 58
+write(1, "drwxr-xr-x 1 brianv brianv      "..., 55drwxr-xr-x 1 brianv brianv       112 ago  6 12:32 .npm
+) = 55
+write(1, "-rw-r--r-- 1 brianv brianv     3"..., 61-rw-r--r-- 1 brianv brianv     38081 ago 21 09:36 output.txt
+) = 61
+write(1, "drwx------ 1 brianv brianv      "..., 55drwx------ 1 brianv brianv        10 jul 26 17:03 .pki
+) = 55
+write(1, "drwxr-xr-x 1 brianv brianv      "..., 61drwxr-xr-x 1 brianv brianv         0 jul 24 21:56 Plantillas
+) = 61
+write(1, "-rw-r--r-- 1 brianv brianv      "..., 59-rw-r--r-- 1 brianv brianv       141 mar  3 16:35 .profile
+) = 59
+write(1, "drwxr-xr-x 1 brianv brianv      "..., 60drwxr-xr-x 1 brianv brianv         0 jul 24 22:22 Proyectos
+) = 60
+write(1, "drwxr-xr-x 1 brianv brianv      "..., 59drwxr-xr-x 1 brianv brianv         0 jul 24 21:56 Público
+) = 59
+write(1, "drwxr-xr-x 1 brianv brianv      "..., 58drwxr-xr-x 1 brianv brianv        96 ago 14 16:50 .rustup
+) = 58
+write(1, "drwx------ 1 brianv brianv      "..., 55drwx------ 1 brianv brianv        10 jul 24 21:56 .ssh
+) = 55
+write(1, "drwx------ 1 brianv brianv      "..., 63drwx------ 1 brianv brianv       128 ago 14 19:39 .thunderbird
+) = 63
+write(1, "drwx------ 1 brianv brianv      "..., 62drwx------ 1 brianv brianv         0 ago 14 19:39 thunderbird
+) = 62
+write(1, "drwxr-xr-x 1 brianv brianv      "..., 55drwxr-xr-x 1 brianv brianv         6 jul 26 16:44 .var
+) = 55
+write(1, "drwxr-xr-x 1 brianv brianv      "..., 58drwxr-xr-x 1 brianv brianv         0 jul 24 21:56 Vídeos
+) = 58
+write(1, "-rw------- 1 brianv brianv      "..., 59-rw------- 1 brianv brianv       743 ago  1 15:10 .viminfo
+) = 59
+write(1, "-rw------- 1 brianv brianv      "..., 62-rw------- 1 brianv brianv        58 ago 21 08:17 .Xauthority
+) = 62
+write(1, "-rwxr-xr-x 1 brianv brianv      "..., 60-rwxr-xr-x 1 brianv brianv       100 jun 29  2024 .Xclients
+) = 60
+write(1, "-rw-r--r-- 1 brianv brianv      "..., 59-rw-r--r-- 1 brianv brianv      1508 mar  3 16:35 .xinitrc
+) = 59
+write(1, "-rw------- 1 brianv brianv     1"..., 67-rw------- 1 brianv brianv     11435 ago 21 09:17 .xsession-errors
+) = 67
+write(1, "-rw------- 1 brianv brianv     1"..., 71-rw------- 1 brianv brianv     13048 ago 20 20:54 .xsession-errors.old
+) = 71
+write(1, "-rw-r--r-- 1 brianv brianv     5"..., 61-rw-r--r-- 1 brianv brianv     53937 jul 26 16:16 .zcompdump
+) = 61
+write(1, "-rw------- 1 brianv brianv      "..., 60-rw------- 1 brianv brianv      1165 ago  6 16:40 .zhistory
+) = 60
+write(1, "-rw-r--r-- 1 brianv brianv      "..., 57-rw-r--r-- 1 brianv brianv       416 ago  6 12:29 .zshrc
+) = 57
+close(1)                                = 0
+close(2)                                = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
+[brianv@brian-sf20gm7 ~]$ file:///home/brianv/Documentos/GitHub/Sistemas-Operativos/Práctica/guia 1-output.txt
